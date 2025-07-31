@@ -52,6 +52,9 @@ qt_add_qml_module(${TARGET_PROJECT}_lib
     QML_FILES
         qml/MyMainWindow.qml
     RESOURCE_PREFIX "/"
+    RESOURCES
+        # Fonts:
+        fonts/blocks-3x3-monospaced.ttf
     NO_PLUGIN
 )
 
