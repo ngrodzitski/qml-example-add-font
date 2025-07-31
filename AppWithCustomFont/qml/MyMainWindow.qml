@@ -9,6 +9,18 @@ Window {
     visible: true
     color: "whitesmoke"
 
+    FontLoader {
+        id: blocks3x3Font
+        source: "qrc:/AppWithCustomFont/fonts/blocks-3x3-monospaced.ttf"
+        onStatusChanged: {
+            if (status == FontLoader.Ready) {
+                console.log("blocks-3x3-monospaced loaded successfully");
+            } else if (status == FontLoader.Error) {
+                console.log("Error loading blocks-3x3-monospaced font");
+            }
+        }
+    }
+
     ColumnLayout{
         anchors.fill: parent
         Text {
@@ -16,6 +28,8 @@ Window {
 
             text: "0123456789";
 
+            // Using cystom font:
+            font.family: blocks3x3Font.name
             font.pixelSize: 40
         }
         Text {
@@ -23,6 +37,8 @@ Window {
 
             text: "abcdefg ... xyz";
 
+            // Using cystom font:
+            font.family: blocks3x3Font.name
             font.pixelSize: 40
         }
         Text {
@@ -30,6 +46,8 @@ Window {
 
             text: "ABCDEFG ... XYZ";
 
+            // Using cystom font:
+            font.family: blocks3x3Font.name
             font.pixelSize: 40
         }
     }
